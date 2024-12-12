@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 const App = () => {
   const createSpan = (e) => {
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/" element={<About />} />
         <Route path="/projects" element={<Projects />} />
       </Routes>
+      <Footer />
     </Router>
     </div>
   );

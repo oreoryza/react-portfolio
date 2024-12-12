@@ -8,8 +8,8 @@ const About = () => {
   }, [])
   return (
     <div className='font-inter'>
-      <Header />
-      <div className='mx-3 my-4'>
+      {/* <Header /> */}
+      <div className='md:mx-3 mx-4 my-4'>
       <Bento />
       </div>
     </div>
