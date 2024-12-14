@@ -24,13 +24,13 @@ const Bento = () => {
       variants={gridVariants}
       initial="hidden"
       animate="show"
-      class="grid auto-rows-[12.5rem] grid-cols-4 md:gap-3 gap-4"
+      className="grid auto-rows-[12.5rem] grid-cols-4 md:gap-3 gap-4"
     >
       <motion.div
         variants={itemVariants}
         whileHover={{ scale: 0.95 }}
         transition={{ type: "spring", stiffness: 500, damping: 16 }}
-        class="relative flex row-span-2 lg:col-span-1 md:col-span-2 col-span-4 rounded-xl bg-black/[.07] overflow-hidden "
+        className="relative flex row-span-2 lg:col-span-1 md:col-span-2 col-span-4 rounded-xl bg-black/[.07] overflow-hidden "
       >
         <img
           className="w-full object-cover"
@@ -43,12 +43,12 @@ const Bento = () => {
           <div className="h-4 w-4 bg-white rounded-full"></div>
         </div>
       </motion.div>
-      <div class="row-span-3 md:col-span-2 col-span-4 grid grid-cols-2 gap-3">
+      <div className="row-span-3 md:col-span-2 col-span-4 grid grid-cols-2 gap-3">
         <motion.div
           variants={itemVariants}
           whileHover={{ scale: 0.95 }}
           transition={{ type: "spring", stiffness: 500, damping: 16 }}
-          class="relative flex justify-center items-center row-span-1 col-span-2 rounded-xl bg-yellow p-4"
+          className="relative flex justify-center items-center row-span-1 col-span-2 rounded-xl bg-yellow p-4"
         >
           <div className="absolute flex flex-col gap-4 p-4">
             <h1 className="font-grotesk md:text-5xl text-4xl font-bold text-blue">
@@ -72,21 +72,21 @@ const Bento = () => {
           variants={itemVariants}
           whileHover={{ scale: 0.95 }}
           transition={{ type: "spring", stiffness: 500, damping: 16 }}
-          class="relative flex justify-center items-end row-span-1 rounded-xl bg-black/[.07] p-4 md:max-h-full max-h-64 "
+          className="relative flex justify-center items-end row-span-1 rounded-xl bg-black/[.07] p-4 md:max-h-full max-h-64 "
         >
           <div className="absolute flex flex-col items-center">
             <div className="grid grid-cols-2 gap-2 my-12">
               <button className="bg-blue py-3 px-4 rounded-lg rounded-br-none text-2xl text-white hover:-translate-y-2 hover:-translate-x-2 hover:scale-125 hover:bg-yellow hover:text-blue transition duration-300">
-                <i class="bi bi-linkedin"></i>
+                <i className="bi bi-linkedin"></i>
               </button>
               <button className="bg-blue py-3 px-4 rounded-lg rounded-bl-none text-2xl text-white hover:-translate-y-2 hover:translate-x-2 hover:scale-125 hover:bg-yellow hover:text-blue duration-300">
-                <i class="bi bi-envelope-at-fill"></i>
+                <i className="bi bi-envelope-at-fill"></i>
               </button>
               <button className="bg-blue py-3 px-4 rounded-lg rounded-tr-none text-2xl text-white hover:translate-y-2 hover:-translate-x-2 hover:scale-125 hover:bg-yellow hover:text-blue duration-300">
-                <i class="bi bi-instagram"></i>
+                <i className="bi bi-instagram"></i>
               </button>
               <button className="bg-blue py-3 px-4 rounded-lg rounded-tl-none text-2xl text-white hover:translate-y-2 hover:translate-x-2 hover:scale-125 hover:bg-yellow hover:text-blue duration-300">
-                <i class="bi bi-github"></i>
+                <i className="bi bi-github"></i>
               </button>
             </div>
             <h2 className="font-grotesk text-4xl font-bold text-center text-blue">
@@ -98,7 +98,7 @@ const Bento = () => {
           variants={itemVariants}
           whileHover={{ scale: 0.95 }}
           transition={{ type: "spring", stiffness: 500, damping: 16 }}
-          class="relative flex justify-center items-end row-span-1 rounded-xl  bg-black/[.07] p-4 md:max-h-full max-h-64 "
+          className="relative flex justify-center items-end row-span-1 rounded-xl  bg-black/[.07] p-4 md:max-h-full max-h-64 "
         >
           <div className="absolute flex flex-col items-center">
             <div className="grid grid-cols-3 gap-7 my-14">
@@ -138,7 +138,7 @@ const Bento = () => {
         variants={itemVariants}
         whileHover={{ scale: 0.95 }}
         transition={{ type: "spring", stiffness: 500, damping: 16 }}
-        class="relative flex justify-center md:row-span-3 row-span-2 lg:col-span-1 md:col-span-2 col-span-4 rounded-xl bg-blue p-4 "
+        className="relative flex justify-center md:row-span-3 row-span-2 lg:col-span-1 md:col-span-2 col-span-4 rounded-xl bg-blue p-4 "
       >
         <div className="absolute flex flex-col gap-8 p-4 w-full">
           <h1 className="font-grotesk md:text-5xl text-4xl font-bold text-white">
@@ -152,7 +152,7 @@ const Bento = () => {
               className="group font-inter flex justify-between items-center font-semibold text-white rounded-lg w-full px-2 py-3 border border-2 border-white md:hover:bg-white md:hover:text-black active:bg-white active:text-black duration-300"
             >
               Dsgnr. Website
-              <i class="bi bi-arrow-up-right-circle-fill text-lg md:group-hover:rotate-45 group-active:rotate-45 md:group-hover:text-blue group-active:text-blue duration-300"></i>
+              <i className="bi bi-arrow-up-right-circle-fill text-lg md:group-hover:rotate-45 group-active:rotate-45 md:group-hover:text-blue group-active:text-blue duration-300"></i>
             </a>
             <a
               href="https://oreoryza-ai.vercel.app/"
@@ -161,7 +161,7 @@ const Bento = () => {
               className="group font-inter flex justify-between items-center font-semibold text-white rounded-lg w-full px-2 py-3 border border-2 border-white md:hover:bg-white md:hover:text-black active:bg-white active:text-black duration-300"
             >
               Personal AI with Groq
-              <i class="bi bi-arrow-up-right-circle-fill text-lg md:group-hover:rotate-45 group-active:rotate-45 md:group-hover:text-blue group-active:text-blue duration-300"></i>
+              <i className="bi bi-arrow-up-right-circle-fill text-lg md:group-hover:rotate-45 group-active:rotate-45 md:group-hover:text-blue group-active:text-blue duration-300"></i>
             </a>
           </div>
         </div>
@@ -170,7 +170,7 @@ const Bento = () => {
             to="/projects"
             className="font-semibold text-white/[.5] hover:text-white"
           >
-            See More <i class="bi bi-chevron-right"></i>
+            See More <i className="bi bi-chevron-right"></i>
           </Link>
         </div>
       </motion.div>
@@ -178,7 +178,7 @@ const Bento = () => {
         variants={itemVariants}
         whileHover={{ scale: 0.95 }}
         transition={{ type: "spring", stiffness: 500, damping: 16 }}
-        class="relative flex justify-center row-span-2 lg:col-span-1 md:col-span-2 col-span-4 rounded-xl  bg-black/[.07] p-4 "
+        className="relative flex justify-center row-span-2 lg:col-span-1 md:col-span-2 col-span-4 rounded-xl  bg-black/[.07] p-4 "
       >
         <div className="absolute flex flex-col w-full p-4">
           <h2 className="font-grotesk text-4xl font-bold text-blue mb-4">
@@ -199,7 +199,7 @@ const Bento = () => {
         variants={itemVariants}
         whileHover={{ scale: 0.95 }}
         transition={{ type: "spring", stiffness: 500, damping: 16 }}
-        class="group relative row-span-1 hidden lg:flex justify-center items-center rounded-xl bg-blue hover:bg-gradient-to-bl from-blue to-[#9DB4DD] p-4 "
+        className="group relative row-span-1 hidden lg:flex justify-center items-center rounded-xl bg-blue hover:bg-gradient-to-bl from-blue to-[#9DB4DD] p-4 "
       >
         <h1 className="font-grotesk text-5xl font-bold text-white">
           Front
@@ -211,11 +211,10 @@ const Bento = () => {
         <PiStarFourFill className="absolute bottom-12 right-5 text-white text-3xl opacity-75 group-hover:text-yellow group-hover:opacity-100" />
       </motion.div>
       <motion.div
-      ref={ref}
         variants={itemVariants}
         whileHover={{ scale: 0.95 }}
         transition={{ type: "spring", stiffness: 500, damping: 16 }}
-        class="relative flex lg:justify-start justify-center items-center lg:row-span-1 md:row-span-2 row-span-4 lg:col-span-2 col-span-4 rounded-xl bg-black/[.07]  overflow-hidden"
+        className="relative flex lg:justify-start justify-center items-center lg:row-span-1 md:row-span-2 row-span-4 lg:col-span-2 col-span-4 rounded-xl bg-black/[.07]  overflow-hidden"
       >
         <div className="absolute flex flex-col gap-2 px-4">
           <h2 className="font-grotesk text-4xl font-bold text-blue lg:text-start text-center">
