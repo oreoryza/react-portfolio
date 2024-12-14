@@ -6,21 +6,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 const App = () => {
-  const createSpan = (e) => {
-    const clickAnimate = document.getElementById('click'); // Pastikan ada elemen dengan id 'click'
-    let span = document.createElement('span');
-    span.style.position = 'absolute'; // Tambahkan posisi absolute
-    span.style.top = `${e.pageY}px`;
-    span.style.left = `${e.pageX}px`;
-
-    clickAnimate.appendChild(span);
-
-    setTimeout(() => {
-      span.remove();
-    }, 500);
-  }
   return (
-    <div id='click' onClick={createSpan}>
+    <div>
     <Router>
       <Navbar />
       <Routes>

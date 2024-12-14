@@ -1,4 +1,6 @@
-import React from "react";
+import React, {useRef} from "react";
+import { motion, useInView } from "framer-motion";
+
 import geometric from "../assets/geometric.png";
 import dsgnr from "../assets/dsgnr.png";
 import blog from "../assets/blog.png";
@@ -39,8 +41,12 @@ const ProjectList = () => {
       link: "https://oz-minimalist.vercel.app/",
     },
   ];
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <div className="flex flex-col justify-center items-center">
+    <motion.section  className="flex flex-col justify-center items-center">
       {project.map((project) => (
         <a
           key={project.id}
@@ -56,15 +62,15 @@ const ProjectList = () => {
               className="w-full lg:w-1/2 rounded-xl project-img"
             />
           </div>
-          <div className="flex md:flex-row flex-col justify-start items-start md:gap-10 gap-4 w-full md:px-16 px-8">
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-10 gap-4 w-full md:px-16 px-8">
               <h2 className="font-grotesk font-bold text-4xl md:max-w-72 md:group-hover:text-blue group-active:text-blue">
                 {project.title}
               </h2>
-              <p className="font-grotesk md:max-w-[28rem]">{project.description}</p>
+              <p className="font-inter md:max-w-[28rem]">{project.description}</p>
           </div>
         </a>
       ))}
-    </div>
+    </motion.section>
   );
 };
 

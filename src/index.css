@@ -2,49 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-#click span {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  border: 2px solid white;
-  transform: translate(-50%, -50%);
-  animation: sizeUp 1s ease-out;
-}
-
-#click span::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
-  border: 2px solid white;
-  transform: translate(-50%, -50%);
-  animation: sizeUp 1s ease-out;
-}
-
-@keyframes sizeUp {
-  from {
-    opacity: 0.75;
-  }
-  to {
-    opacity: 0;
-    width: 3rem;
-    height: 3rem;
-  }
-}
-
 .card {
   transition: all 0.2s;
 }
 
 .card:hover {
   box-shadow: #1E1E1E -5px 5px;
-  transform: translate(3px, -3px);
+  transform: translate(5px, -5px);
 }
 
 .project-img {

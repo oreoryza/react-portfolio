@@ -18,13 +18,13 @@ const Projects = () => {
         <h2 className="font-grotesk font-bold text-4xl md:max-w-72">
           Bootcamp Final Project
         </h2>
-        <p className="font-grotesk md:max-w-[28rem]">Decision Support System with Fuzzy-AHP and VIKOR method</p>
+        <p className="font-inter md:max-w-[28rem]">Coming Soon</p>
       </div>
       <div className="flex md:flex-row flex-col justify-start items-start bg-yellow rounded-xl md:gap-10 gap-4 w-full md:px-16 p-8 md:hover:scale-95 duration-300">
         <h2 className="font-grotesk font-bold text-4xl md:max-w-72">
           College Final Project
         </h2>
-        <p className="font-grotesk md:max-w-[28rem]">Decision Support System with Fuzzy-AHP and VIKOR method</p>
+        <p className="font-inter md:max-w-[28rem]">Decision Support System with Fuzzy-AHP and VIKOR method</p>
       </div>
       <div className='font-grotesk font-bold flex justify-center items-center gap-3 text-blue text-5xl w-full p-8 rounded-xl'>
         <PiStarFourFill className='text-yellow' />
