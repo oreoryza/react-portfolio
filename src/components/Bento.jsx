@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 
@@ -9,6 +9,8 @@ import { IoLogoJavascript } from "react-icons/io5";
 import { PiStarFourFill } from "react-icons/pi";
 
 const Bento = () => {
+  const [stack, setStack] = useState(null)
+
   const gridVariants = {
     hidden: { opacity: 0 },
     show: { opacity: 1, transition: { staggerChildren: 0.3 } },
@@ -48,7 +50,7 @@ const Bento = () => {
           variants={itemVariants}
           whileHover={{ scale: 0.95 }}
           transition={{ type: "spring", stiffness: 500, damping: 16 }}
-          className="relative flex justify-center items-center row-span-1 col-span-2 rounded-xl bg-yellow p-4"
+          className="relative flex justify-center items-center row-span-1 col-span-2 rounded-xl bg-black/[.07] p-4"
         >
           <div className="absolute flex flex-col gap-4 p-4">
             <h1 className="font-grotesk md:text-5xl text-4xl font-bold text-blue">
@@ -98,33 +100,34 @@ const Bento = () => {
           variants={itemVariants}
           whileHover={{ scale: 0.95 }}
           transition={{ type: "spring", stiffness: 500, damping: 16 }}
-          className="relative flex justify-center items-end row-span-1 rounded-xl  bg-black/[.07] p-4 md:max-h-full max-h-64 "
+          className="relative group flex justify-center items-end row-span-1 rounded-xl  bg-black/[.07] p-4 md:max-h-full max-h-64"
         >
+          <div className="absolute font-inter top-8 text-black/[.5] text-xl font-semibold max-md:hidden">{stack}</div>
           <div className="absolute flex flex-col items-center">
             <div className="grid grid-cols-3 gap-7 my-14">
-              <a href="">
+              <a href="" onMouseOver={() => setStack("HTML")} onMouseOut={() => setStack(null)}>
                 <FaHtml5 className="scale-150 text-blue hover:text-[#DA4D24]" />
               </a>
-              <a href="">
-                <FaCss3Alt className="scale-150 text-black/[.5] hover:text-[#2D53E5]" />
+              <a href="" onMouseOver={() => setStack("CSS")} onMouseOut={() => setStack(null)}>
+                <FaCss3Alt className="scale-150 text-blue hover:text-[#2D53E5]" />
               </a>
-              <a href="">
+              <a href="" onMouseOver={() => setStack("React")} onMouseOut={() => setStack(null)}>
                 <FaReact className="scale-150 text-blue hover:text-[#66DBFB]" />
               </a>
-              <a href="">
-                <SiRedux className="scale-150 text-black/[.5] hover:text-[#7A50BE]" />
+              <a href="" onMouseOver={() => setStack("Redux")} onMouseOut={() => setStack(null)}>
+                <SiRedux className="scale-150 text-blue hover:text-[#7A50BE]" />
               </a>
-              <div className="bg-blue border-2 border-blue"></div>
-              <a href="">
-                <SiTypescript className="scale-150 text-black/[.5] hover:text-[#087ECF]" />
+              <div className="bg-blue border-2 border-blue group-hover:bg-yellow group-hover:border-yellow group-hover:rounded-full"></div>
+              <a href="" onMouseOver={() => setStack("Typescript")} onMouseOut={() => setStack(null)}>
+                <SiTypescript className="scale-150 text-blue hover:text-[#087ECF]" />
               </a>
-              <a href="">
+              <a href="" onMouseOver={() => setStack("Javascript")} onMouseOut={() => setStack(null)}>
                 <IoLogoJavascript className="scale-150 text-blue hover:text-[#F7E025]" />
               </a>
-              <a href="">
-                <FaBootstrap className="scale-150 text-black/[.5] hover:text-[#8019FA]" />
+              <a href="" onMouseOver={() => setStack("Bootstrap CSS")} onMouseOut={() => setStack(null)}>
+                <FaBootstrap className="scale-150 text-blue hover:text-[#8019FA]" />
               </a>
-              <a href="">
+              <a href="" onMouseOver={() => setStack("Tailwind CSS")} onMouseOut={() => setStack(null)}>
                 <RiTailwindCssFill className="scale-150 text-blue hover:text-[#3EBFF8]" />
               </a>
             </div>
@@ -199,7 +202,7 @@ const Bento = () => {
         variants={itemVariants}
         whileHover={{ scale: 0.95 }}
         transition={{ type: "spring", stiffness: 500, damping: 16 }}
-        className="group relative row-span-1 hidden lg:flex justify-center items-center rounded-xl bg-blue hover:bg-gradient-to-bl from-blue to-[#9DB4DD] p-4 "
+        className="group relative row-span-1 hidden lg:flex justify-center items-center rounded-xl bg-blue hover:bg-gradient-to-bl from-blue to-[#6C8ECC] p-4 "
       >
         <h1 className="font-grotesk text-5xl font-bold text-white">
           Front

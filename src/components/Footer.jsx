@@ -26,9 +26,9 @@ const Footer = () => {
           </Link>
         </ul>
       </div>
-      <h3 className="font-bold text-2xl cursor-pointer text-blue">
+      <Link to="/" className="font-bold text-2xl cursor-pointer text-blue">
         ORYZA SATIVA
-      </h3>
+      </Link>
         </div>
     </div>
   );

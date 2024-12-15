@@ -1,75 +1,45 @@
-import React, {useRef} from "react";
+import React, { useRef } from "react";
+import { Link } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
-
-import geometric from "../assets/geometric.png";
-import dsgnr from "../assets/dsgnr.png";
-import blog from "../assets/blog.png";
-import ai from "../assets/ai.png";
+import { useProjects } from "../useContext/ProjectContext";
 
 const ProjectList = () => {
-  const project = [
-    {
-      id: 1,
-      title: "Geometric Transformation",
-      description:
-        "A web application that allows users to lear and apply geometric transformations to object",
-      imageUrl: geometric,
-      link: "https://geometric-transformation.vercel.app/",
-    },
-    {
-        id: 2,
-        title: "Personal Blog",
-        description:
-        "Building a personal blog with Progressive Web Apps capabilities",
-        imageUrl: blog,
-        link: "https://oreoryza-blog-lumos.vercel.app/",
-    },
-    {
-        id: 3,
-        title: "Personal AI",
-        description:
-        "Building personal large language model AI web powered by Groq",
-        imageUrl: ai,
-        link: "https://oreoryza-ai.vercel.app/",
-    },
-    {
-      id: 4,
-      title: "Dsgnr.",
-      description:
-        "A landing page for a design agency",
-      imageUrl: dsgnr,
-      link: "https://oz-minimalist.vercel.app/",
-    },
-  ];
-
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const projects = useProjects();
 
   return (
-    <motion.section  className="flex flex-col justify-center items-center">
-      {project.map((project) => (
-        <a
-          key={project.id}
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group flex flex-col justify-center items-center bg-yellow w-full rounded-xl py-12 pt-2 my-4 md:hover:scale-95 duration-300 card-project"
-        >
-          <div className="flex justify-center items-center w-full px-8 lg:my-24 my-12">
-            <img
-              src={project.imageUrl}
-              alt={project.title}
-              className="w-full lg:w-1/2 rounded-xl project-img"
-            />
-          </div>
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-10 gap-4 w-full md:px-16 px-8">
-              <h2 className="font-grotesk font-bold text-4xl md:max-w-72 md:group-hover:text-blue group-active:text-blue">
-                {project.title}
-              </h2>
-              <p className="font-inter md:max-w-[28rem]">{project.description}</p>
-          </div>
-        </a>
-      ))}
+    <motion.section className="flex flex-col justify-center items-center">
+      {projects.map((project) => {
+        const ref = useRef(null);
+        const isInView = useInView(ref, { once: true });
+
+        return (
+          <motion.div
+            key={project.id}
+            ref={ref}
+            className="group flex flex-col justify-center items-center bg-yellow w-full rounded-xl py-12 pt-2 my-4 card-project"
+            initial={{ opacity: 0, y: 50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            whileHover={{ scale: 0.95 }}
+            transition={{ duration: 0.5, type: "spring", stiffness: 500, damping: 16 }}
+          >
+            <Link to={`/project-detail/${project.id}`}>
+              <div className="flex justify-center items-center w-full px-8 lg:my-24 my-12">
+                <img
+                  src={project.imageUrl}
+                  alt={project.title}
+                  className="w-full lg:w-1/2 rounded-xl project-img"
+                />
+              </div>
+              <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-10 gap-4 w-full md:px-16 px-8">
+                <h2 className="font-grotesk font-bold text-4xl md:max-w-72 md:group-hover:text-blue group-active:text-blue">
+                  {project.title}
+                </h2>
+                <p className="font-inter md:max-w-[28rem]">{project.description}</p>
+              </div>
+            </Link>
+          </motion.div>
+        );
+      })}
     </motion.section>
   );
 };
